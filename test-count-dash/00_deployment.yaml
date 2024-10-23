@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-count-dash
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: test-count-dash
+  template:
+    metadata:
+      labels:
+        app: test-count-dash
+    spec:
+      containers:
+      - image: hashicorpnomad/counter-dashboard:v3
+        name: test-count-dash
+        ports:
+        - containerPort: 80

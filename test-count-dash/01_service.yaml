@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-count-dash
+spec:
+  type: LoadBalancer
+  selector:
+    app: test-count-dash
+  ports:
+    - port: 80
