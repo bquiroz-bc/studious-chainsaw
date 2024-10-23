@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-count-api
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: test-count-api
+  template:
+    metadata:
+      labels:
+        app: test-count-api
+    spec:
+      containers:
+      - image: hashicorpnomad/counter-api:v3
+        name: test-count-api
+        ports:
+        - containerPort: 80
