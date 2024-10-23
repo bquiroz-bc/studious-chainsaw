@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: test-count-api
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: test-count-api
   ports:
